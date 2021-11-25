@@ -1,32 +1,28 @@
 import React from 'react'
-import { Route,  Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
-//import { Button } from 'react-bootstrap';
-import {Login} from './components/Login.js'
-import LoginConform from './loginConform.js'
-//import {LoginConform} from './loginConform.js'
+import { Button } from 'react-bootstrap';
+import Dashboard from './Dashboard.js'
+import { Login } from './components/Login.js';
 const App = () => (
   <div>
     <Router>
       <div>
-
         <nav>
           <ul>
             <li>
-              <Link to='/Login.js'>Home</Link>
+              <Link to='/Login'>Home</Link>
             </li>
-            
-      
           </ul>
         </nav>
         <Switch>
 
-          <Route exact path='/Login.js'>
-            <Login/>
+          <Route exact path='/Login'>
+            <Login />
           </Route>
 
-          <Route path='/loginConform.js'>
-            <LoginConform/>
+          <Route path='/Dashboard'>
+            <Dashboard />
           </Route>
 
 
@@ -35,10 +31,8 @@ const App = () => (
       </div>
     </Router>
 
-
-
-
   </div>
+
 )
 
 export default App
