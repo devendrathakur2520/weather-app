@@ -1,10 +1,12 @@
-import { SHOW_MODEL } from "../action";
+import { SHOW_CITY_WEATHER, SHOW_MODEL } from "../action";
 import { USER_DETAILS } from "../action";
 import { SET_CITY } from "../action";
+//import { SHOW_CITY_WEATHER } from "../action";
 const initialState = {
 
     show: false,
-    city:"",
+    city: "",
+    fetchApi: [],
     record: {
         name: "",
         password: "",
@@ -26,6 +28,11 @@ const login = (state = initialState, action) => {
             return {
                 ...state,
                 city: action.payload,
+            }
+        case SHOW_CITY_WEATHER:
+            return {
+                ...state,
+                fetchApi: action.payload,
             }
         default:
             return state;

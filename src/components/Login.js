@@ -21,6 +21,7 @@ export const Login = () => {
     const { name, password } = user;
     const handleChange = (e) => {
         dispatch(userDetails({ ...user, [e.target.name]: e.target.value }));
+       
     }
 
     const getData = () => {
@@ -32,16 +33,18 @@ export const Login = () => {
 
     useEffect(() => {
         getData();
+       
     }, [])
 
     const handleClose = () => dispatch(showModel(false));
     const handleShow = () => dispatch(showModel(true));
 
     const handleSubmit = () => {
-        if (user.name && user.password == data.map((user) => user.name && user.password)) {
+        if (name && password == data.map((user) => user.name && user.password)) {
             
             alert("Successfull login");
             history.push('/Dashboard')
+            
         }
         else (alert("error"));
         }
